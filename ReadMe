@@ -5,6 +5,8 @@ config/properties
 项目根目录/config
 java jar ***.jar --spring.config.location=D:/application.properties\ (不会互补)
 
+jar包外的application.properties
+
 2.profile文件的加载
 profile的意思是配置，不同的环境需要不同的配置
 application-{pofile}.properties
