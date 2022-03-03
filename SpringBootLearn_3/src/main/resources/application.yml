@@ -1,0 +1,11 @@
+user:
+  username: 张三
+  age: 18
+  birthday: 2020/1/7
+  habbies: [唱歌,跳舞]
+    #- 唱歌
+    #- 跳舞
+  friends:
+      18: 范冰冰
+      #{18: 范冰冰,19: 迪丽热巴}
+

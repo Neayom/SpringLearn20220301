@@ -5,7 +5,9 @@ config/properties
 项目根目录/config
 java jar ***.jar --spring.config.location=D:/application.properties\ (不会互补)
 
-jar包外的application.properties
+jar包外的配置文件 ./
+jar包外的配置文件的config（带通配符） ./config/*/
+jar包外的配置文件的config  ./config/
 
 2.profile文件的加载
 profile的意思是配置，不同的环境需要不同的配置
@@ -13,3 +15,10 @@ application-{pofile}.properties
 @profile注解，根据注解中的参数，有些bean会生效，有些不会生效
 
 3.yml > ymal > properties
+
+4.属性注入
+通过yml文件中设置值，可以为bean中属性赋值
+@ConfigurationProperties(prefix = "user") 告诉Springboot将本类中的所有属性和配置文件中相关的配置进行绑定
+需要数据校验，则将@Validated注解标识在@ConfigurationProperties注解下面：支持jsr-303的数据校验
+jsr-303的数据校验：@Null @NotNull @Email.... 需要引入：spring-boot-starter-validation
+如果想要将属性的配置文件和主配置文件分开，则@PropertySource(value = {"classpath:user.properties"})：这里必须用properties结尾

@@ -1,4 +1,4 @@
-package com.dlnu.springboot3;
+package com.dlnu.springboot3.Controller;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
