@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created by lgx on 2022/3/1.
  */
-@Profile("prod")
+//@Profile("prod")
 @Controller
 @RequestMapping("/Hello")
 public class HelloController {
@@ -16,6 +16,6 @@ public class HelloController {
     @ResponseBody
     public String Hello(){
         System.out.println("HEllo");
-        return "hello";
+        return "hello 轩23111`111";
     }
 }

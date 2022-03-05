@@ -22,3 +22,17 @@ application-{pofile}.properties
 需要数据校验，则将@Validated注解标识在@ConfigurationProperties注解下面：支持jsr-303的数据校验
 jsr-303的数据校验：@Null @NotNull @Email.... 需要引入：spring-boot-starter-validation
 如果想要将属性的配置文件和主配置文件分开，则@PropertySource(value = {"classpath:user.properties"})：这里必须用properties结尾
+
+5.@SpringbootApplication注解内部有@ComponentScan注解，相当于<context:component-scan>但是没有指定basepackage，
+没有指定 spring底层会自动扫描当前配置类所在的包
+
+6.Springboot自动配置主流程：
+  通过@SpringbootApplication入口注解，使用@EnableAutoConfiguration启动自动装配，该注解通过
+@Import({AutoConfigurationImportSelector.class})导入AutoConfigurationImportSelector类（一个变种的ImportSelector类），该类会根据内部
+getImportGroup方法返回的值，如果该值是你实现的一个Group接口的类，那么将会调用实现该Group接口类所实现的方法
+准确来说是先调用process() 来获取自动配置类，再根据selectImports返回一个数组，将数组中的完整全限定名注册为bean
+通过 MATE-INF/spring.factories里面配置的所有的EnableAutoConfiguration的值加入到了容器中
+https://www.processon.com/view/link/5fc0abf67d9c082f447ce49b
+
+面试回答两个点：1、怎么读取所有有效配置类 2、怎样通过配置文件关联到自动配置类
+7.那么一个自动配置类是怎么玩的
