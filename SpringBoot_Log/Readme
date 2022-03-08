@@ -1,0 +1,32 @@
+1.热部署：修改部分代码和配置文件后不需要每次重启应用，只需等待几秒即可使修改生效
+（1）添加依赖（2）IDEA中进行配置
+
+2.日志实现：log4j淘汰  jul  log4j2  logback（boot）
+  日志门面：jcl  slf4j（boot）
+  日志门面不实现日志功能，用来整合日志
+
+  为了日志统一实现，将jcl转换为slf4j：用到适配器（门面之间）jcl-over-slf4j
+  slf4j桥接器和其它的日志框架进行桥接。
+
+3.Springboot底层用slf4j+logback的方式进行日志记录
+    logback桥接：logback-classic
+   Springboot也把其它的日志都替换成slf4j
+   log4j适配：log4j-over-slf4j
+   jul适配：jul-to-slf4j
+   上述两个适配器是为了适配Spring的默认日志jcl
+
+4.日志文件输出：配置文件中，logging.file.name 可以名字（相对路径）可以路径+文件名
+                       logging.file.path 物理文件夹路径，会默认使用spring.log
+
+5.日志迭代：日志归档也可以通过配置文件配置
+https://docs.spring.io/spring-boot/docs/2.6.1/reference/html/application-properties.html#application-properties
+
+6.自定义日志配置文件
+logback：logback-spring.xml
+log4j2: log4j2.xml
+
+7.切换日志框架
+logback 切换成 log4j2
+（1）将logback的场景启动器排除（slf4j只能运行一个桥接器）
+（2）添加log4j2的场景启动器
+（3）添加log4j2的配置文件

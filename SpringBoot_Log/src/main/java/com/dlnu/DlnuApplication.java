@@ -10,11 +10,6 @@ public class DlnuApplication {
 
     static Logger logger = LoggerFactory.getLogger(DlnuApplication.class);
     public static void main(String[] args) {
-       logger.trace("追踪");
-        logger.debug("调试");
-        logger.info("信息");
-        logger.warn("警告");
-        logger.error("异常");
         SpringApplication.run(DlnuApplication.class, args);
     }
 

@@ -7,7 +7,9 @@
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <!-- 格式 -->
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{100} - %msg%n</pattern>
+            <springProfile name = "!dev">
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{100} +++++ %msg%n</pattern>
+            </springProfile>
         </encoder>
     </appender>
 <!--cn.tulingxueyuan.mapper-->
@@ -15,7 +17,7 @@
     <logger name="cn.tulingxueyuan.mapper" level="TRACE"></logger>
     org.apache.ibatis.transaction
     <!--控制所有的日志级别-->
-    <root level="error">
+    <root level="info">
         <!-- 将当前日志级别输出到哪个追加器上面 -->
         <appender-ref ref="STDOUT" />
     </root>
