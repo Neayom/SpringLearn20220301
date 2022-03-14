@@ -39,3 +39,14 @@ https://www.processon.com/view/link/5fc0abf67d9c082f447ce49b
 
 8.日志信息
 记录日志不能直接使用日志实现框架（log4j,jul） 必须通过日志门面来实现（slf4j,jcl）
+
+
+
+9.序列化反序列化
+序列化：java对象转化为json、xml、二进制其它的一些可以进行网络传输和存储的内容
+反序列化：json xml转化为java对象
+Springboot通过HttpMessageConverter进行序列化/反序列化
+
+@RestController：
+1.和Controller注解一样，将控制器类注入到Spring上下文环境，该类RequestMapping标注方法为HTTP服务端点。
+2.作为ResponseBody的作用，请求响应默认使用的序列化方式是JSON，而不是跳转到jsp或模板页面。
