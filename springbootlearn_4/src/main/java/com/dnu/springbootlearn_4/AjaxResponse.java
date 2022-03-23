@@ -1,14 +1,17 @@
 package com.dnu.springbootlearn_4;
 
+
 import lombok.Data;
 
 /**
  * Created by lgx on 2022/3/13.
  */
 @Data
+
 public class AjaxResponse {
 
     private boolean isOk;
+
     private int code;//200、400、500
     private String message;
     private Object data;

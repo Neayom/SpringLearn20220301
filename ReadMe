@@ -47,6 +47,17 @@ https://www.processon.com/view/link/5fc0abf67d9c082f447ce49b
 反序列化：json xml转化为java对象
 Springboot通过HttpMessageConverter进行序列化/反序列化
 
-@RestController：
+10.@RestController：
 1.和Controller注解一样，将控制器类注入到Spring上下文环境，该类RequestMapping标注方法为HTTP服务端点。
 2.作为ResponseBody的作用，请求响应默认使用的序列化方式是JSON，而不是跳转到jsp或模板页面。
+
+11.@COnditionalOn注解：当满足某一条件时，才实例化某一类
+
+12.yaml:在springboot中支持松散绑定，family-name = familyName=family_name
+
+   双引号: 会转义字符串里面的特殊字符，如下面\n被转义为换行：
+   ​ name: “zhangsan \n lisi”：输出：zhangsan 换行 lisi
+
+   单引号: 不会转义特殊字符，特殊字符最终只是作为一个普通的字符串数据，如：
+   ​ name: ‘zhangsan \n lisi’：输出：zhangsan \n lisi
+   ${random.int}:随机一个int类型的值

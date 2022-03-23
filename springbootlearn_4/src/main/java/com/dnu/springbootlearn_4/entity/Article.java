@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.util.Date;
+
 import java.util.List;
 
 /**
@@ -17,6 +17,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
 //@JsonPropertyOrder(value = {"content","title"}) //改变子属性在JSON序列化中的默认定义的顺序
 public class Article {
    // @JsonIgnore //排除掉一些敏感的信息(如id，密码)，不做序列化

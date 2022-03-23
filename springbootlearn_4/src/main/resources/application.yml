@@ -1,0 +1,18 @@
+family:
+  family-name: "happy family"
+  father:
+    name: zimug
+    age: 18
+  mother:
+    alias:
+      - lovely
+      - aliice
+  child:
+    name: zimug2
+    age: 5
+    friends:
+      - hobby: football
+        sex: male
+      - hobby: baskball
+        sex: female
+      #- {hobby: football,sex: sex}
