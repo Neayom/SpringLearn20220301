@@ -27,7 +27,7 @@ public class JacksonTest {
                 .content("Spring-boot 从青铜到王者")
                // .createTime(new Date())
                 .title("t1")
-                .read(readers)
+                //.read(readers)
                 .build();
         ObjectMapper mapper = new ObjectMapper();
         String StringJson = mapper.writeValueAsString(artical);

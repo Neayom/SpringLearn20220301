@@ -61,3 +61,14 @@ Springboot通过HttpMessageConverter进行序列化/反序列化
    单引号: 不会转义特殊字符，特殊字符最终只是作为一个普通的字符串数据，如：
    ​ name: ‘zhangsan \n lisi’：输出：zhangsan \n lisi
    ${random.int}:随机一个int类型的值
+
+13.controller层做参数的接受和相应结果的返回 service做业务处理 repository做数据持久化和查询的操作
+Controller最好不要直接调用持久层
+
+14.因为需要在service层控制事务，一个Service调用多少Dao，需要在服务层需要加上@Transactional，加上后
+就能保证所有在该service的方法就在一个事务里执行，要么都成功要么都失败：举例 转钱
+一个serviceA调用ServiceB，此时最外层（serviceA层）的事务起作用
+
+15.数据库事务不能跨链接，不能跨多个数据源，更不能跨库。
+一旦出现上述情况，就需要分布式事务，分布式事务需要一个统一协调的事务管理器
+

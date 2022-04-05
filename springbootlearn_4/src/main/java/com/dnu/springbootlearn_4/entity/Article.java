@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,7 +27,7 @@ public class Article {
     private String title;
     private String content;
    // @JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss",timezone = "GMT+8") // 指定日期类型的属性格式
-    //private Date createTime;
-    @JsonInclude(JsonInclude.Include.NON_NULL)  //排除为空的元素不做序列化反序列化
-    private List<Reader> read;
+    private Date createTime;
+    //@JsonInclude(JsonInclude.Include.NON_NULL)  //排除为空的元素不做序列化反序列化
+    //private List<Reader> read;
 }

@@ -16,3 +16,14 @@ family:
       - hobby: baskball
         sex: female
       #- {hobby: football,sex: sex}
+
+spring:
+  datasource:
+      url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useUnicode=true&zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=utf-8
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    com.dnu.springbootlearn_4: debug
